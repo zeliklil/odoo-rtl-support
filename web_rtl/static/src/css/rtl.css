@@ -1,0 +1,16 @@
+.openerp.rtl .oe_form table.oe_form_group{
+  direction: rtl;
+}
+.openerp.rtl .oe_form td.oe_form_group_cell_label{
+  border-right: 0;
+  border-left: 1px solid #dddddd;
+}
+.openerp.rtl .oe_form .oe_form_label_help[for],
+.openerp .oe_form .oe_form_label[for]{
+  padding-right: 0;
+  padding-left: 8px;
+}
+.openerp.rtl .oe_form td.oe_form_group_cell + .oe_form_group_cell{
+  padding: 2px 8px 2px 0;
+  text-align: right;
+}
