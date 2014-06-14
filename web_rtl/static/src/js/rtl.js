@@ -17,6 +17,7 @@ openerp.web_rtl = function(instance){
             console.log(lang.direction);
             //$('div.openerp').addClass(lang.direction);
             self.$el.addClass(lang.direction);
+            instance.session.direction = lang.direction;
           });
     }
 //    show_application: function(){
@@ -24,4 +25,13 @@ openerp.web_rtl = function(instance){
 //      this._super();
 //    }
   });
+  (function(){
+    var proxied = $.fn.openerpClass;
+    $.fn.openerpClass = function(additionnalClass){
+      additionnalClass = additionnalClass || '';
+      var direction = instance.session.direction;
+      //console.log('dialog is ' + direction)
+      return proxied.apply(this, ['rtl ' + additionnalClass]);
+    }
+  })()
 }
