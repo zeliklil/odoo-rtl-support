@@ -8,13 +8,15 @@ openerp.web_rtl = function(instance){
       })
     },
     set_direction: function(){
-      lang_code = this.session.user_context.lang;
+      var lang_code = this.session.user_context.lang;
+      var self = this
       new instance.web.Model('res.lang').query(['direction'])
           .filter([['code','=',lang_code]])
         .first()
           .then(function(lang){
             console.log(lang.direction);
-            $('div.openerp').addClass(lang.direction);
+            //$('div.openerp').addClass(lang.direction);
+            self.$el.addClass(lang.direction);
           });
     }
 //    show_application: function(){
