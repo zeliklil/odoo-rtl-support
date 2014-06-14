@@ -18,5 +18,9 @@ Tested on version 7.0
 
 Todo
 ----
-* rtl support for dialogs
+* push upstream
+
+  * test on master branch
+
+  * work on css first?
 
